@@ -7,13 +7,6 @@
         "org.freedesktop.Sdk.Extension.llvm18"
     ],
     "command": "azahar-launcher",
-    "rename-desktop-file": "azahar.desktop",
-    "rename-mime-file": "azahar.xml",
-    "rename-icon": "azahar",
-    "rename-mime-icons": [
-        "azahar"
-    ],
-    "copy-icon": true,
     "build-options": {
         "append-path": "/usr/lib/sdk/llvm18/bin",
         "prepend-ld-library-path": "/usr/lib/sdk/llvm18/lib",
@@ -118,13 +111,12 @@
             "post-install": [
                 "install -Dm755 ../azahar-launcher.sh /app/bin/azahar-launcher",
                 "install -Dm644 ../org.azahar_emu.Azahar.metainfo.xml /app/share/appdata/org.azahar_emu.Azahar.metainfo.xml",
-                "desktop-file-edit --set-key StartupWMClass --set-value azahar --set-key Exec --set-value azahar-launcher /app/share/applications/azahar.desktop"
+                "desktop-file-edit --set-key StartupWMClass --set-value azahar --set-key Exec --set-value azahar-launcher /app/share/applications/org.azahar_emu.Azahar.desktop"
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/azahar-emu/azahar/releases/download/2120.1/azahar-unified-source-20250322-6ecee96.tar.xz",
-                    "sha256": "8039c40f2b963353c8ba6cc8370186608e3751526fb8a05374c49c8a3c3c1299"
+                    "type": "dir",
+                    "path": "../azahar/"
                 },
                 {
                     "type": "file",
